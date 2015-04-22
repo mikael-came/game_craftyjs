@@ -1,0 +1,8 @@
+{
+  "name": "game-crafty",
+  "private": true,
+  "dependencies": {
+    "bootstrap": "~3.2.0",
+    "crafty": "~0.6.3"
+  }
+}
