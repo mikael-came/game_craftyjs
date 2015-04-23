@@ -1,19 +1,4 @@
 
-/*var level;
-  scenes = [
-    "menu","niveau1"
-  ];
-
-  function startGame(){
-     level = 0;
-     loadMenu();
-  }
-
-  function getNextLevelscene(){
-    return scenes[level];
-  }
-  */
-
   //menu
   function loadMenu(){
     Crafty.scene ("menu",function(){
@@ -63,7 +48,7 @@
       Crafty.background("#066");
 
       var banner = Crafty.e("2D,DOM,Text")
-      .text("Une fois son diplome obtenu. Il ne lui restait qu'à faire ses preuves en stage...")
+      .text("Une fois son diplome obtenu.")
       .textColor('#000000')
       .textFont({
         size: '20px',
@@ -77,25 +62,10 @@
         h : 200,
       });
 
-      var instruction = Crafty.e("2D,DOM,Text")
-      .text(" Pour commencer cliquer sur ENTRER")
-      .textFont({
-        size: '25px',
-        weight: 'bold'
-
-      })
-      .attr({
-        x : 400,
-        y : 150,
-        w : 200,
-        h : 20,
-      });
-
-      banner.bind('KeyDown',function (e){
-          if(e.key==Crafty.keys.ENTER){
-            Crafty.enterScene("niveau1");
-          }
-      });
+      var wall = Crafty.e("2D, DOM, Image")
+      .image("images/sprite/ending.png")
+      .attr({x:1550, y:90,})
+      ;
 
     });
   }
@@ -120,7 +90,7 @@
       playerline=1;
 
 
-  //SCORE - gui component, put all your static gui stuff in here
+    //SCORE - gui component, put all your static gui stuff in here
     if( !document.getElementById("gui") ){
        var gui = document.createElement("div");
        	gui.setAttribute("id", "gui"); // set id!
@@ -226,7 +196,7 @@
 
         this.x=this.x-speedFrame;
 
-          Crafty.enterScene("niveau2");
+          Crafty.enterScene("menu2");
       });
       player.onHit("startblocker",function(hit) {
 
@@ -270,7 +240,7 @@
       });
     });
 
-  }
+}
 
 
 function addIcone(id,x,line){
@@ -324,6 +294,6 @@ window.onload = function(){
     }
   });
 
-  Crafty.enterScene("niveau1");
+  Crafty.enterScene("menu");
 
 }
